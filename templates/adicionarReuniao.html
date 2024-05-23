@@ -1,0 +1,70 @@
+{% extends "modelo.html" %}
+{% block title %}Adicionar Reunião{% endblock %}
+
+{% block content %}
+<h2>{{ erro }}</h2>
+
+<form action= "#" method="post">
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Participantes:</label>
+    <textarea class="form-control" id="participantes" name="participantes" rows="2">{{participantes}}</textarea>
+  </div>
+  
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Tema da reunião:</label>
+    <textarea class="form-control" id="temaReuniao" name="temaReuniao" rows="2">{{temaReuniao}}</textarea>
+  </div>
+  
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Resumo da reunião:</label>
+    <textarea class="form-control" id="resumo" name="resumo" rows="4">{{resumo}}</textarea>
+  </div>
+  
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Anotações:</label>
+    <textarea class="form-control" id="anotacoes" name="anotacoes" rows="8">{{anotacoes}}</textarea>
+  </div>
+  
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Lista de decisões:</label>
+    <textarea class="form-control" id="decisoes" name="decisoes" rows="4">{{decisoes}}</textarea>
+  </div>
+  
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Tarefas:</label>
+    <textarea class="form-control" id="tarefas" name="tarefas" rows="4">{{tarefas}}</textarea>
+  </div>
+  
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Prazo:</label>
+    <textarea class="form-control" id="prazo" name="prazo" rows="3">{{prazo}}</textarea>
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Prioridade:</label>
+    <select class="form-control" id="prioridade" name="prioridade">
+      {% for i in tabelaPrioridade %}
+      <option value="{{i[0]}}">{{i[0].replace("_"," ")}}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlSelect1">Concluido:</label>
+    <select class="form-control" id="concluido" name="concluido">
+      {% for i in tabelaConcluido %}
+      <option value="{{i[0]}}">{{i[0].replace("_"," ")}}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+
+
+
+
+  
+  <div class="col-md-2 mx-auto">
+    <p><input type="submit" value="Adicionar" name="envio"></p>
+  </div>
+<form>
+{% endblock %}

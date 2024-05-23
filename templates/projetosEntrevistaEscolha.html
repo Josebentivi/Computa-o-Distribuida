@@ -1,0 +1,23 @@
+{% extends "modelo.html" %}
+{% block title %}Adicionar{% endblock %}
+
+{% block content %}
+<h2>{{ erro }}</h2>
+
+<form action= "#" method="post">
+  <h1>Escolha o cliente da primeira entrevista:</h1>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Cliente:</label>
+    <select class="form-control" id="cliente" name="cliente">
+      {% for i in tabelaClientes %}
+      <option value="{{i[0]}}">{{i[0].replace("_"," ")}}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <p></p>
+  <p><input type="submit" class="btn btn-primary" value="Selecionar" name="salvar"></p>
+<form>
+
+{% endblock %}

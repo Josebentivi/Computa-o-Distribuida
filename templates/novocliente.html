@@ -1,0 +1,27 @@
+{% extends "modelo.html" %}
+{% block title %}Adicionar cliente no sistema{% endblock %}
+
+{% block content %}
+<h2>{{ erro }}</h2>
+<p></p>
+<h2>Adicionar cliente no sistema</h2>
+
+<form action= "#" method="post">
+
+  <p>Login do cliente:<input type="text" name="login"></p>
+  <p>Senha:<input type="text" name="senha"></p>
+  <p>Empresa:<input type="text" name="empresa"></p>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Nivel de permissão:</label>
+    <select class="form-control" id="nivel" name="nivel">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+  </div>
+  <p></p>
+  <p><input type="submit" class="btn btn-primary" value="Adicionar" name="salvar"></p>
+<form>
+{% endblock %}

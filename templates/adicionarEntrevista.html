@@ -1,0 +1,109 @@
+{% extends "modelo.html" %}
+{% block title %}Adicionar Entrevista{% endblock %}
+
+{% block content %}
+<h2>{{ erro }}</h2>
+
+<form action= "#" method="post">
+  <div class="row g-3 align-items-center">
+    <div class="col-auto mb-3">
+      Script de vendas:
+    </div>
+    <div class="col-auto mb-3">
+      <button type="submit" class="btn btn-outline-secondary" name="acao" value="gerarScript|{{ID}}" data-bs-toggle="modal" data-bs-target="#janela">Gerar script de vendas</button>
+    </div>
+  </div>
+  <p><textarea class="form-control" id="script" name="script" rows="4">{{script}}</textarea></p>
+  <p> Nome do Cliente:<input type="text" name="nomeCliente" value="{{nome}}"></p>
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Anotações do primeiro contato:</label>
+    <textarea class="form-control" id="obs" name="obs" rows="4">{{obs}}</textarea>
+  </div>
+
+  <div class="row g-3 align-items-center">
+    <div class="col-auto mb-3">
+      <label for="exampleFormControlSelect1">Dia: </label>
+    </div>
+    <div class="col-auto mb-3">
+      <select class="form-control" id="dia" name="dia">
+        {% for i in tabela3 %}
+        <option value="{{i[0]}}">{{i[0].replace("_"," ")}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="col-auto mb-3">
+      <label for="exampleFormControlSelect1">Mês: </label>
+    </div>
+    <div class="col-auto mb-3">
+      <select class="form-control" id="mes" name="mes">
+        {% for i in tabela4 %}
+        <option value="{{i[0]}}">{{i[0].replace("_"," ")}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="col-auto mb-3">
+      <label for="exampleFormControlSelect1">Ano:</label>
+    </div>
+    <div class="col-auto mb-3">
+      <select class="form-control" id="ano" name="ano">
+        {% for i in tabela5 %}
+        <option value="{{i[0]}}">{{i[0].replace("_"," ")}}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+
+  <div class="row g-3 align-items-center">
+    <div class="col-auto mb-3">
+      <label for="exampleFormControlSelect1">Hora:</label>
+    </div>
+    <div class="col-auto mb-3">
+        <select class="form-control" id="hora" name="hora">
+          {% for i in tabela2 %}
+          <option value="{{i[0]}}">{{i[0].replace("_"," ")}}</option>
+          {% endfor %}
+        </select>
+    </div>
+    <div class="col-auto mb-3">
+      <label for="exampleFormControlSelect1">:</label>
+    </div>
+    <div class="col-auto mb-3">
+      <select class="form-control" id="min" name="min">
+        {% for i in tabela1 %}
+        <option value="{{i[0]}}">{{i[0].replace("_"," ")}}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <div class="row g-3 justify-content-center">
+    <div class="col-md-2 mx-auto">
+      <p><input type="submit" value="Adicionar" name="entrar"></p>
+    </div>
+    <div class="col-md-2 mx-auto">
+      <p><input type="submit" value="Adicionar2" name="entrar"></p>
+    </div>
+    <div class="col-md-2 mx-auto">
+      <p><input type="submit" value="Adicionar3" name="entrar"></p>
+    </div>    
+  </div>
+<form>
+
+<div class="modal fade" id="janela" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Aguarde</h5>
+      </div>
+      <div class="modal-footer">
+        Carregando Script...
+        <div class="spinner-border" role="status">
+          <span class="sr-only"></span>
+        </div>
+      </div>
+      <div class="col g-3 align-items-center">
+      
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

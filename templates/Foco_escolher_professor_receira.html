@@ -1,0 +1,69 @@
+{% extends "modeloClientes.html" %}
+{% block title %}Adicionar avaliação do aluno{% endblock %}
+
+{% block content %}
+<h2>{{ erro }}</h2>
+<p></p>
+<h2>Adicionar avaliação do aluno</h2>
+
+<form action= "#" method="post">
+
+  <div class="row g-3 align-items-center">
+    <div class="col-auto mb-3">
+      <label for="exampleFormControlSelect1">Professor: </label>
+    </div>
+    <div class="col-auto mb-3">
+      <select class="form-control" id="professor" name="professor">
+        {% for i in professor %}
+        <option value="{{i[0]}}">{{i[0]}}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+
+  <div class="col-auto mb-3">
+      <label for="exampleFormControlSelect1">Mês Início: </label>
+    </div>
+    <div class="col-auto mb-3">
+      <select class="form-control" id="mesi" name="mesi">
+        {% for i in mes %}
+        <option value="{{i}}">{{i}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="col-auto mb-3">
+      <label for="exampleFormControlSelect1">Ano Início:</label>
+    </div>
+    <div class="col-auto mb-3">
+      <select class="form-control" id="anoi" name="anoi">
+        {% for i in ano %}
+        <option value="{{i}}">{{i}}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="col-auto mb-3">
+      <label for="exampleFormControlSelect1">Mês Final: </label>
+    </div>
+    <div class="col-auto mb-3">
+      <select class="form-control" id="mesf" name="mesf">
+        {% for i in mes %}
+        <option value="{{i}}">{{i}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="col-auto mb-3">
+      <label for="exampleFormControlSelect1">Ano Final:</label>
+    </div>
+    <div class="col-auto mb-3">
+      <select class="form-control" id="anof" name="anof">
+        {% for i in ano %}
+        <option value="{{i}}">{{i}}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+  <p></p>
+  <p><input type="submit" class="btn btn-primary" value="Receita Mensal" name="salvar"></p>
+<form>
+{% endblock %}

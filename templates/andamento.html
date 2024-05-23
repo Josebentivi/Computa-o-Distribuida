@@ -1,0 +1,43 @@
+{% extends "modelo.html" %}
+{% block title %}Modificar{% endblock %}
+
+{% block content %}
+<h1>{{ erro }}</h1>
+<form action= "#" method="post">
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Selecione o DOC referênte ao cliente:</label>
+        <select class="form-control" id="doc" name="doc">
+          {% for i in tabela %}
+          <option value={{i[0]}}>DOC: {{i[0]}} - Cliente: {{i[1]}}</option>
+          {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Dia:</label>
+        <select class="form-control" id="dia" name="dia">
+          {% for i in range(1,32) %}
+          <option value={{i}}>{{i}}</option>
+          {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Mês:</label>
+        <select class="form-control" id="mes" name="mes">
+          {% for i in range(1,13) %}
+          <option value={{i}}>{{i}}</option>
+          {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Ano:</label>
+        <select class="form-control" id="ano" name="ano">
+          {% for i in range(2020,2028) %}
+          <option value={{i}}>{{i}}</option>
+          {% endfor %}
+        </select>
+    </div>
+    <p>Andamento:<input type="text" name="andamento"></p>
+    <p><input type="submit" value="Adicionar prazo" name="entrar"></p>
+<form>
+{% endblock %}
+

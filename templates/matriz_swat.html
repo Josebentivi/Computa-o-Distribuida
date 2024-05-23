@@ -1,0 +1,110 @@
+{% extends "modelo.html" %}
+{% block title %}Adicionar Reunião{% endblock %}
+
+{% block content %}
+<h2>{{ erro }}</h2>
+<p></p>
+<h2>Matriz SWOT</h2>
+
+<form action= "#" method="post">
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Nome da empresa:</label>
+    <textarea class="form-control" id="clienteCalendario" name="clienteCalendario" rows="1" disabled>{{clienteCalendario}}</textarea>
+  </div>
+
+  <h1>Forças</h1>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">O que fazemos bem?</label>
+    <textarea class="form-control" id="fazemos_bem" name="fazemos_bem" rows="10">{{dados[1]}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">O que diferencia a nossa organização?</label>
+    <textarea class="form-control" id="diferenciais" name="diferenciais" rows="10">{{dados[2]}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">De que o nosso público-alvo gosta na nossa organização?</label>
+    <textarea class="form-control" id="publico_aprova" name="publico_aprova" rows="5">{{dados[3]}}</textarea>
+  </div>
+
+  <h1>Fraquezas</h1>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Quais iniciativas estão com desempenho abaixo do esperado e por quê?</label>
+    <textarea class="form-control" id="baixo_desempenho" name="baixo_desempenho" rows="10">{{dados[4]}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">O que poderia melhorar?</label>
+    <textarea class="form-control" id="a_melhorar" name="a_melhorar" rows="10">{{dados[5]}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Quais recursos poderiam melhorar o nosso desempenho?</label>
+    <textarea class="form-control" id="recursos_melhorar_desempenho" name="recursos_melhorar_desempenho" rows="10">{{dados[6]}}</textarea>
+  </div>
+
+  <h1>Oportunidades</h1>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Quais recursos podemos usar para melhorar as nossas fraquezas?</label>
+    <textarea class="form-control" id="recursos_melhorar_fraquesas" name="recursos_melhorar_fraquesas" rows="10">{{dados[7]}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Existem lacunas de mercado nos serviços que prestamos?</label>
+    <textarea class="form-control" id="lacunas_servicos" name="lacunas_servicos" rows="10">{{dados[8]}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Quais são as nossas metas para o ano?</label>
+    <textarea class="form-control" id="meta_anual" name="meta_anual" rows="10">{{dados[9]}}</textarea>
+  </div>
+
+  <h1>Ameaças</h1>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Quais mudanças na indústria são motivos de preocupação?</label>
+    <textarea class="form-control" id="mudancas_preocupantes" name="mudancas_preocupantes" rows="10">{{dados[10]}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Quais são as novas tendências de mercado no horizonte?</label>
+    <textarea class="form-control" id="tendencias_mercado" name="tendencias_mercado" rows="10">{{dados[11]}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Em que pontos nossos concorrentes têm um melhor desempenho que o nosso?</label>
+    <textarea class="form-control" id="concorrentes" name="concorrentes" rows="10">{{dados[12]}}</textarea>
+  </div>
+
+  <div class="col-md-2 mx-auto">
+    <p><input type="submit" class="btn btn-outline-secondary" value="Salvar SWAT" name="botao">
+    <input type="submit" class="btn btn-outline-secondary" value="Insights" name="botao"></p>
+  </div>
+
+<form>
+
+<div class="modal fade" id="janela" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Aguarde...</h5>
+      </div>
+      <div class="modal-footer">
+        <div class="spinner-border" role="status">
+          <span class="sr-only"></span>
+        </div>
+      </div>
+      <div class="col g-3 align-items-center">
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
+{% endblock %}

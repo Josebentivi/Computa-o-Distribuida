@@ -1,0 +1,52 @@
+{% extends "modelo.html" %}
+{% block title %}Pesquisa{% endblock %}
+
+{% block content %}
+
+{% for i in tabela %}
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Nome da Empresa: {{ i[2] }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Especulação de faturamento: {{i[20]}}</h6>
+        <form action= "#" method="post">
+          <p><button type="submit" class="btn btn-outline-secondary" name="contato" value="especulacao|{{i[0]}}" data-bs-toggle="modal" data-bs-target="#janela">Gerar especulação</button></p>
+        
+          <p class="card-text">Nicho: {{ i[8] }}</p>
+          <p class="card-text">Bairro: {{ i[1].split("|")[0] }}</p>
+          <p class="card-text">Contato 1: {{ i[4] }}</p>
+          <p class="card-text">Contato 2: {{ i[5] }}</p>
+          
+          <p class="card-text">Ultimo contato: {{ i[18] }}</p>
+          <p class="card-text">Status: {{ i[17] }}</p>
+          
+          <p><button type="submit" class="btn btn-outline-secondary" name="contato" value="Sem Contato|{{i[0]}}">Sem Contato</button>
+            <button type="submit" class="btn btn-outline-secondary" name="contato" value="Já contratou um serviço|{{i[0]}}">Já contratou um serviço</button>
+            <button type="submit" class="btn btn-outline-secondary" name="contato" value="Não quis|{{i[0]}}">Não quis</button>
+            <button type="submit" class="btn btn-outline-secondary" name="contato" value="Marcar|{{i[0]}}">Marcar entrevista</button></p>
+        </form>
+      </div>
+    </div>
+{% endfor %}
+
+<div class="modal fade" id="janela" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Aguarde</h5>
+      </div>
+      <div class="modal-footer">
+        <div class="spinner-border" role="status">
+          <span class="sr-only"></span>
+        </div>
+      </div>
+      <div class="col g-3 align-items-center">
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+

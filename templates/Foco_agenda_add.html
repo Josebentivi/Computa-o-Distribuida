@@ -1,0 +1,122 @@
+{% extends "modeloClientes.html" %}
+{% block title %}Adicionar na agenda{% endblock %}
+
+{% block content %}
+<h2>{{ erro }}</h2>
+
+<form action= "#" method="post">
+  <div class="row g-3 align-items-center">
+    <div class="col-auto mb-3">
+      <label for="exampleFormControlSelect1">Professor: </label>
+    </div>
+    <div class="col-auto mb-3">
+      <select class="form-control" id="professores" name="professores">
+        {% for i in professores %}
+        <option value="{{i[0]}}">{{i[0]}}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+
+  <div class="row g-3 align-items-center">
+    <div class="col-auto mb-3">
+      <label for="exampleFormControlSelect1">Aluno: </label>
+    </div>
+    <div class="col-auto mb-3">
+      <select class="form-control" id="alunos" name="alunos">
+        {% for i in alunos %}
+        <option value="{{i[0]}}">{{i[0]}}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+
+  <div class="row g-3 align-items-center">
+    <div class="col-auto mb-3">
+      <label for="exampleFormControlSelect1">Duração: </label>
+    </div>
+    <div class="col-auto mb-3">
+      <select class="form-control" id="duracao" name="duracao">
+        {% for i in duracao %}
+        <option value="{{i}}">{{i}}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+
+  <div class="row g-3 align-items-center">
+    <div class="col-auto mb-3">
+      <label for="exampleFormControlSelect1">Matéria: </label>
+    </div>
+    <div class="col-auto mb-3">
+      <select class="form-control" id="materias" name="materias">
+        {% for i in materias %}
+        <option value="{{i}}">{{i}}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+
+  <div class="row g-3 align-items-center">
+    <div class="col-auto mb-3">
+      <label for="exampleFormControlSelect1">Dia: </label>
+    </div>
+    <div class="col-auto mb-3">
+      <select class="form-control" id="dia" name="dia">
+        {% for i in dia %}
+        <option value="{{i}}">{{i}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="col-auto mb-3">
+      <label for="exampleFormControlSelect1">Mês: </label>
+    </div>
+    <div class="col-auto mb-3">
+      <select class="form-control" id="mes" name="mes">
+        {% for i in mes %}
+        <option value="{{i}}">{{i}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="col-auto mb-3">
+      <label for="exampleFormControlSelect1">Ano:</label>
+    </div>
+    <div class="col-auto mb-3">
+      <select class="form-control" id="ano" name="ano">
+        {% for i in ano %}
+        <option value="{{i}}">{{i}}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+
+  <div class="row g-3 align-items-center">
+    <div class="col-auto mb-3">
+      <label for="exampleFormControlSelect1">Hora:</label>
+    </div>
+    <div class="col-auto mb-3">
+        <select class="form-control" id="hora" name="hora">
+          {% for i in hora %}
+          <option value="{{i}}">{{i}}</option>
+          {% endfor %}
+        </select>
+    </div>
+    <div class="col-auto mb-3">
+      <label for="exampleFormControlSelect1">:</label>
+    </div>
+    <div class="col-auto mb-3">
+      <select class="form-control" id="min" name="min">
+        {% for i in min %}
+        <option value="{{i}}">{{i}}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <div class="row g-3 justify-content-center">
+    <div class="col-md-2 mx-auto">
+      <p><input type="submit" value="Salvar" name="Salvar"></p>
+    </div>  
+  </div>
+<form>
+
+{% endblock %}

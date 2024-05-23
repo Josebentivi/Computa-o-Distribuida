@@ -1,0 +1,68 @@
+{% extends "modeloClientes.html" %}
+{% block title %}Pagina Inicial{% endblock %}
+
+{% block content %}
+<h2>{{ texto1 }}</h2>
+<h3>Agenda do mês</h3>
+
+{% for k in datas %}
+    <div class="card">
+      <div class="card-body">
+      	<h6 class="card-subtitle mb-2 text-muted">{{ k }}</h6>
+      	{% for i in tabela %}
+      		{% if i[0]==k %}
+	        <div class="card border-{{i[4]}} text-{{i[4]}} mb-3">
+		      <div class="card-body">        
+		        <p class="card-text-{{i[4]}}"><small class="text-body-{{i[4]}}"><small class="text-body-{{i[4]}}">Professor: {{ i[1] }}</small></small></p>	        
+		        <p class="card-text-{{i[4]}}"><small class="text-body-{{i[4]}}"><small class="text-body-{{i[4]}}">Aluno: {{ i[2] }}</small></small></p>	        
+		        <p class="card-text-{{i[4]}}"><small class="text-body-{{i[4]}}"><small class="text-body-{{i[4]}}">Horário: {{ i[3] }}</small></small></p>	        
+		        <p class="card-text-{{i[4]}}"><small class="text-body-{{i[4]}}"><small class="text-body-{{i[4]}}">Matéria: {{ i[6] }}</small></small></p>        
+		        <p class="card-text-{{i[4]}}"><small class="text-body-{{i[4]}}"><small class="text-body-{{i[4]}}">Status: {{ i[5] }}</small></small></p>
+		        {% if i[5]!="CANCELADO" %}
+		        <form action= "#" method="post">
+		          <p><button type="submit" class="btn btn-outline-{{i[4]}}" name="Atualizar Cadastro" value="Confirmar|{{i[7]}}">Confirmou</button>
+		            <button type="submit" class="btn btn-outline-{{i[4]}}" name="Atualizar Cadastro" value="Cancelar|{{i[7]}}">Cancelou</button>
+		            <button type="submit" class="btn btn-outline-{{i[4]}}" name="Atualizar Cadastro" value="Comparecer|{{i[7]}}">Compareceu</button></p>
+		        </form>
+		    		{% endif %}
+		      </div>
+		    </div>
+		    {% endif %}
+	    {% endfor %}
+      </div>
+    </div>
+{% endfor %}
+
+<h3>Agenda por professor</h3>
+{% for l in professores %}
+	<h3>Professor {{l[0]}}</h3>
+	{% for k in datas %}
+	    <div class="card">
+	      <div class="card-body">
+	      	<h6 class="card-subtitle mb-2 text-muted">{{ k }}</h6>
+	      	{% for i in tabela %}
+	      		{% if i[0]==k and i[1]==l[0] %}
+		        <div class="card border-{{i[4]}} text-{{i[4]}} mb-3">
+			      <div class="card-body">        
+			        <p class="card-text-{{i[4]}}"><small class="text-body-{{i[4]}}"><small class="text-body-{{i[4]}}">Professor: {{ i[1] }}</small></small></p>	        
+			        <p class="card-text-{{i[4]}}"><small class="text-body-{{i[4]}}"><small class="text-body-{{i[4]}}">Aluno: {{ i[2] }}</small></small></p>	        
+			        <p class="card-text-{{i[4]}}"><small class="text-body-{{i[4]}}"><small class="text-body-{{i[4]}}">Horário: {{ i[3] }}</small></small></p>	        
+			        <p class="card-text-{{i[4]}}"><small class="text-body-{{i[4]}}"><small class="text-body-{{i[4]}}">Status: {{ i[5] }}</small></small></p>
+			        {% if i[5]!="CANCELADO" %}
+			        <form action= "#" method="post">
+			          <p><button type="submit" class="btn btn-outline-{{i[4]}}" name="Atualizar Cadastro" value="Confirmar|{{i[7]}}">Confirmou</button>
+			            <button type="submit" class="btn btn-outline-{{i[4]}}" name="Atualizar Cadastro" value="Cancelar|{{i[7]}}">Cancelou</button>
+			            <button type="submit" class="btn btn-outline-{{i[4]}}" name="Atualizar Cadastro" value="Comparecer|{{i[7]}}">Compareceu</button></p>
+		        	</form>
+		    			{% endif %}
+			      </div>
+			    </div>
+			    {% endif %}
+		    {% endfor %}
+	      </div>
+	    </div>
+	{% endfor %}
+{% endfor %}
+
+{% endblock %}
+

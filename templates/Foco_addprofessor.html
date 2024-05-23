@@ -1,0 +1,31 @@
+{% extends "modeloClientes.html" %}
+{% block title %}Adicionar Professor{% endblock %}
+
+{% block content %}
+<h2>{{ erro }}</h2>
+<p></p>
+<h1>Adicionar Professor</h1>
+
+<form action= "#" method="post">
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Nome do professor:</label>
+    <textarea class="form-control" id="nomeprofessor" name="nomeprofessor" rows="1"></textarea>
+  </div>
+
+  <div class="row g-3 align-items-center">
+    <div class="col-auto mb-3">
+      <label for="exampleFormControlSelect1">Cor na agenda: </label>
+    </div>
+    <div class="col-auto mb-3">
+      <select class="form-control" id="cor" name="cor">
+        {% for i in cor %}
+        <option value="{{i}}">{{i}}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <div class="col-md-2 mx-auto">
+    <p><input type="submit" class="btn btn-outline-secondary" value="Salvar Professor" name="botao"></p>
+  </div>
+<form>
+{% endblock %}

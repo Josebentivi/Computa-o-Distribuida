@@ -1,0 +1,46 @@
+{% extends "modelo.html" %}
+{% block title %}Pagina Inicial{% endblock %}
+
+{% block content %}
+<p></p>
+<div>
+  <h1>Tabela de valores para o plano {{plano}}</h1>
+  <div class="row">
+    <div class="col-md">
+      <div class="card card-body" style="height: 450px;">
+        <p class="blockquote text-center">Para pagamento a vista</p>
+        <p class="blockquote">Criação do site institucional: {{vista1}} R$</p>
+        <p class="blockquote">Valor do suporte: {{vista2}} R$</p>
+        <p class="blockquote"><strong>Total: {{vista3}} R$</strong></p>
+        <p class="blockquote"><strong>Equivalente à {{vista4}} R$ ao mês {{acrec}}</strong></p>
+        <p class="blockquote text-center"><strong>(Desconto de {{desconto}} R$)</strong></p>
+      </div>
+    </div>
+    <div class="col-md">
+      <div class="card card-body" style="height: 450px;">
+        <p class="blockquote text-center">Para pagamento em até 6 vezes:</p>
+        <p class="blockquote">Criação do site institucional: {{prazo1}} R$</p>
+        <p class="blockquote">Valor do suporte: {{prazo2}} R$</p>
+        <p class="blockquote"><strong>Total: {{prazo3}} R$</strong></p>
+        <p class="blockquote"><strong>Equivalente à {{prazo4}} R$ ao mês</strong></p>
+        <p class="blockquote"></p>
+      </div>
+    </div>
+    <div class="col-md">
+      <div class="card card-body" style="height: 450px ;">
+        <p class="blockquote text-center">Para pagamentos a partir de 6 vezes</p>
+        <p class="blockquote">7 vezes: {{par7}}</p>
+        <p class="blockquote">8 vezes: {{par8}}</p>
+        <p class="blockquote">9 vezes: {{par9}}</p>
+        <p class="blockquote">10 vezes: {{par10}}</p>
+        <p class="blockquote">11 vezes: {{par11}}</p>
+        <p class="blockquote">12 vezes: {{par12}}</p>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+{% endblock %}
+

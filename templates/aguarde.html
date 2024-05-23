@@ -1,0 +1,40 @@
+{% extends "modelo.html" %}
+{% block title %}Pesquisa{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col g-3 align-items-center">
+            <div class="text-center">
+              <form action= "#" method="post">
+                <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                <h4>Processamento de Dados</h4>
+                <p>Por favor, aguarde a pagina redirecionar automaticamente</p>
+                <p><button type="submit" name="gerar" value="script" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#janela">Gerar scripts de venda</button></p>
+                <p><a href="/leads/especularFaturamento" type="button" class="btn btn-outline-secondary">Gerar especulação de faturamento</a></p>
+              </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="janela" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Aguarde</h5>
+      </div>
+      <div class="modal-footer">
+        <div class="spinner-border" role="status">
+          <span class="sr-only"></span>
+        </div>
+      </div>
+      <div class="col g-3 align-items-center">
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+{% endblock %}

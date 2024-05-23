@@ -1,0 +1,84 @@
+{% extends "modelo.html" %}
+{% block title %}Adicionar Reunião{% endblock %}
+
+{% block content %}
+<h2>{{ erro }}</h2>
+<p></p>
+<h1>Primeira entrevista</h1>
+
+<form action= "#" method="post">
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Nome da empresa:</label>
+    <textarea class="form-control" id="clienteCalendario" name="clienteCalendario" rows="1" disabled>{{clienteCalendario}}</textarea>
+  </div>
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Faça um breve resumo do seu negócio:</label>
+    <textarea class="form-control" id="resumo" name="resumo" rows="10">{{dados[1]}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Existe alguma sazonalidade no seu mercado?</label>
+    <textarea class="form-control" id="sazonalidade" name="sazonalidade" rows="10">{{dados[2]}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Em um mundo perfeito, o que você gostaria que acontecesse com nosso trabalho para que você ficasse feliz?</label>
+    <textarea class="form-control" id="mundo_perfeito" name="mundo_perfeito" rows="10">{{dados[3]}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Liste o nome de alguns concorrentes, pessoas influentes no seu mercado:</label>
+    <textarea class="form-control" id="concorrentes" name="concorrentes" rows="10">{{dados[4]}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Qual seu produto mais lucrativo?</label>
+    <textarea class="form-control" id="produto_lucrativo" name="produto_lucrativo" rows="7">{{dados[5]}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Fale sobre sua rotina de geração de audiência e vendas:</label>
+    <textarea class="form-control" id="rotina_geracao_audiencia" name="rotina_geracao_audiencia" rows="7">{{dados[6]}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Qual a quantidade de visitantes você tem por dia, semana, mês?</label>
+    <textarea class="form-control" id="quantidades_visitantes" name="quantidades_visitantes" rows="5">{{dados[7]}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Defina em detalhes o seu cliente perfeito:</label>
+    <textarea class="form-control" id="cliente_perfeito" name="cliente_perfeito" rows="4">{{dados[8]}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Qual a coisa mais importante que o seu cliente precisa saber sobre seu produto/serviço?</label>
+    <textarea class="form-control" id="informacao_importante_produto" name="informacao_importante_produto" rows="4">{{dados[9]}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Qual a coisa mais importante que os seus clientes querem mais que qualquer outra coisa?</label>
+    <textarea class="form-control" id="clientes_querem" name="clientes_querem" rows="4">{{dados[10]}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Como acontece o processo de vendas atualmente?</label>
+    <textarea class="form-control" id="processo_vendas_atual" name="processo_vendas_atual" rows="4">{{dados[11]}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Existe algum outro produto de maior valor que pode ser oferecido?</label>
+    <textarea class="form-control" id="produtos_maior_valor" name="produtos_maior_valor" rows="4">{{dados[12]}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Quanto você pode disponibilizar de recursos para estratégias de marketing hoje?</label>
+    <textarea class="form-control" id="captal_giro_marketing" name="captal_giro_marketing" rows="4">{{dados[13]}}</textarea>
+  </div>
+
+  <div class="col-md-2 mx-auto">
+    <p><input type="submit" class="btn btn-outline-secondary" value="Salvar" name="botao">
+    <input type="submit" class="btn btn-outline-secondary" value="Matriz Swat" name="botao"></p>
+  </div>
+<form>
+{% endblock %}

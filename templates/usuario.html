@@ -1,0 +1,12 @@
+{% extends "modelo.html" %}
+{% block title %}Pagina de login{% endblock %}
+
+{% block content %}
+<h1>{{ erro }}</h1>
+<form action= "#" method="post">
+    <h1>Logar no sistema:</h1>
+    <p><input type="text" name="usuario"></p>
+    <p><input type="password" name="senha"></p>
+    <p><input type="submit" value="Entrar" name="Entrar"></p>
+<form>
+{% endblock %}

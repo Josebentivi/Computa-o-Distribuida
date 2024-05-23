@@ -1,0 +1,39 @@
+{% extends "modeloClientes.html" %}
+{% block title %}Escolher Mês{% endblock %}
+
+{% block content %}
+<h2>{{ erro }}</h2>
+
+<form action= "#" method="post">
+
+    <div class="col-auto mb-3">
+      <label for="exampleFormControlSelect1">Mês: </label>
+    </div>
+    <div class="col-auto mb-3">
+      <select class="form-control" id="mes" name="mes">
+        {% for i in mes %}
+        <option value="{{i}}">{{i}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="col-auto mb-3">
+      <label for="exampleFormControlSelect1">Ano:</label>
+    </div>
+    <div class="col-auto mb-3">
+      <select class="form-control" id="ano" name="ano">
+        {% for i in ano %}
+        <option value="{{i}}">{{i}}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+
+  </div>
+  <div class="row g-3 justify-content-center">
+    <div class="col-md-2 mx-auto">
+      <p><input type="submit" value="Visualisar" name="Visualisar"></p>
+    </div>  
+  </div>
+<form>
+
+{% endblock %}

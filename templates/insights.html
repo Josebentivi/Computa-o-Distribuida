@@ -1,0 +1,67 @@
+{% extends "modelo.html" %}
+{% block title %}Adicionar Reunião{% endblock %}
+
+{% block content %}
+<h2>{{ erro }}</h2>
+<p></p>
+<h2>Gerador de insights</h2>
+
+<form action= "#" method="post">
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Nome da empresa:</label>
+    <textarea class="form-control" id="clienteCalendario" name="clienteCalendario" rows="1" disabled>{{clienteCalendario}}</textarea>
+  </div>
+
+  <p>Aqui você pode fazer perguntas que serão processadas com base nas informações da sua empresa, criando uma resposta personalisada para você.</p>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Qual a sua pergunta?</label>
+    <textarea class="form-control" id="pergunta" name="pergunta" rows="3">{{pergunta}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Resposta</label>
+    <textarea class="form-control" id="resposta" name="resposta" rows="10">{{resposta}}</textarea>
+  </div>
+
+  <div class="col-md-2 mx-auto">
+    <p><input type="submit" class="btn btn-outline-secondary" value="Salvar" name="botao">
+    <button type="submit" class="btn btn-outline-secondary" name="botao" value="gerar" data-bs-toggle="modal" data-bs-target="#janela">Gerar resposta</button></p>
+  </div>
+
+  <p></p>
+  {% for i in tabela %}
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Pergunta: {{ i[1] }}</h5>
+        <h6 class="card-text">Resposta: {{i[2]}}</h6>
+      </div>
+    </div>
+    <p></p>
+  {% endfor %}
+
+
+
+<form>
+
+<div class="modal fade" id="janela" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Aguarde...</h5>
+      </div>
+      <div class="modal-footer">
+        <div class="spinner-border" role="status">
+          <span class="sr-only"></span>
+        </div>
+      </div>
+      <div class="col g-3 align-items-center">
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "modelo.html" %}
+{% block title %}Adicionar Reunião{% endblock %}
+
+{% block content %}
+<h2>{{ erro }}</h2>
+<p></p>
+<h1>Dados Inbound</h1>
+
+<form action= "#" method="post">
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Nome da empresa:</label>
+    <textarea class="form-control" id="clienteCalendario" name="clienteCalendario" rows="1" disabled>{{clienteCalendario}}</textarea>
+  </div>
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Público alvo:</label>
+    <textarea class="form-control" id="publico" name="publico" rows="10">{{dados[1]}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Personas:</label>
+    <textarea class="form-control" id="persona" name="persona" rows="10">{{dados[2]}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Diferenciais da empresa:</label>
+    <textarea class="form-control" id="diferenciais" name="diferenciais" rows="10">{{dados[3]}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Tom de voz da marca:</label>
+    <textarea class="form-control" id="tom" name="tom" rows="7">{{dados[4]}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Objetivos da empresa:</label>
+    <textarea class="form-control" id="objetivos" name="objetivos" rows="7">{{dados[5]}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Persona da marca:</label>
+    <textarea class="form-control" id="persona_marca" name="persona_marca" rows="5">{{dados[6]}}</textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Palavras ou frases preferidas:</label>
+    <textarea class="form-control" id="palavras" name="palavras" rows="4">{{dados[7]}}</textarea>
+  </div>
+
+  <div class="col-md-2 mx-auto">
+    <p><input type="submit" class="btn btn-outline-secondary" value="Salvar" name="botao">
+    <input type="submit" class="btn btn-outline-secondary" value="Gerar calendário" name="botao"></p>
+  </div>
+<form>
+{% endblock %}

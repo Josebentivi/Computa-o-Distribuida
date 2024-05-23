@@ -1,0 +1,142 @@
+{% extends "modelo.html" %}
+{% block title %}Adicionar{% endblock %}
+
+{% block content %}
+<h2>{{ erro }}</h2>
+
+<form action= "#" method="post">
+  <h1>Adicionar novo cliente:</h1>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Bairro:</label>
+    <div class="row g-3 align-items-center">
+      <div class="col-md">
+        <select class="form-control" id="bairro" name="bairro">
+          {% for i in tabelaBairro %}
+          <option value="{{i}}">{{i}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="col-md">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Adicionar Bairro
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <p>Nome da empresa:<input type="text" name="nome"></p>
+  <p>Link google maps:<input type="text" name="maps"></p>
+  <p>Contato 1:<input type="text" name="contato1"></p>
+  <p>Contato 2:<input type="text" name="contato2"></p>
+  <p>Endereço:<input type="text" name="endereco"></p>
+  
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Tem site:</label>
+    <select class="form-control" id="site" name="site">
+      {% for i in tabelaSite %}
+      <option value="{{i[0]}}">{{i[0].replace("_"," ")}}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Nicho atuante:</label>
+    <select class="form-control" id="nicho" name="nicho">
+      {% for i in tabela1 %}
+      <option value="{{i[0]}}">{{i[0].replace("_"," ")}}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Sub-nicho:</label>
+    <select class="form-control" id="subnicho" name="subnicho">
+      {% for i in tabela2 %}
+      <option value="{{i[0]}}">{{i[0].replace("_"," ")}}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Tamanho do imóvel:</label>
+    <select class="form-control" id="m2" name="m2">
+      {% for i in tabelaArea %}
+      <option value="{{i[0]}}">{{i[0].replace("_"," ")}}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Numero de Funcionários:</label>
+    <select class="form-control" id="quantidadefun" name="quantidadefun">
+      {% for i in tabelaFuncionarios %}
+      <option value="{{i[0]}}">{{i[0].replace("_"," ")}}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Fluxo de clientes:</label>
+    <select class="form-control" id="fluxo" name="fluxo">
+      {% for i in tabelaFluxo %}
+      <option value="{{i[0]}}">{{i[0].replace("_"," ")}}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Anos no mercado:</label>
+    <select class="form-control" id="anos" name="anos">
+      {% for i in tabelaAnosMercado %}
+      <option value="{{i[0]}}">{{i[0].replace("_"," ")}}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Cidade:</label>
+    <select class="form-control" id="cidade" name="cidade">
+      {% for i in tabelaCidades %}
+      <option value="{{i[0]}}">{{i[0].replace("_"," ")}}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Rebranding:</label>
+    <select class="form-control" id="Rebranding" name="Rebranding">
+      {% for i in tabelaReb %}
+      <option value="{{i[0]}}">{{i[0].replace("_"," ")}}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <p></p>
+  <p><input type="submit" class="btn btn-primary" value="Adicionar" name="salvar"></p>
+<form>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Informações do novo bairro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action= "#" method="post">
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Nome do Bairro:</label>
+            <input type="text" class="form-control" id="nomeBairro" name="nomeBairro">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <button type="submit" class="btn btn-primary" name="salvar" value="salvarBairro">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

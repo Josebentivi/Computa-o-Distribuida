@@ -1,0 +1,22 @@
+{% extends "modeloClientes.html" %}
+{% block title %}Avaliações dos professores{% endblock %}
+
+{% block content %}
+<h2>{{ erro }}</h2>
+<p></p>
+<h2>Avaliações dos professores</h2>
+
+<form action= "#" method="post">
+  {% for i in tabela %}
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Aluno: {{ i[1] }}</h5>
+        <h6 class="card-text">Avaliação: {{i[2]}}</h6>
+        <h6 class="card-text">Data: {{i[3]}}</h6>
+      </div>
+    </div>
+    <p></p>
+  {% endfor %}
+<form>
+
+{% endblock %}

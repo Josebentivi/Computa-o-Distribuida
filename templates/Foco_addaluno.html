@@ -1,0 +1,40 @@
+{% extends "modeloClientes.html" %}
+{% block title %}Adicionar Aluno{% endblock %}
+
+{% block content %}
+<h2>{{ erro }}</h2>
+<p></p>
+<h1>Adicionar Aluno</h1>
+
+<form action= "#" method="post">
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Nome do aluno:</label>
+    <textarea class="form-control" id="nomealuno" name="nomealuno" rows="1"></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Nome do Responsável:</label>
+    <textarea class="form-control" id="nomeresponsavel" name="nomeresponsavel" rows="1"></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Email:</label>
+    <textarea class="form-control" id="email" name="email" rows="1"></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">Telefone:</label>
+    <textarea class="form-control" id="telefone" name="telefone" rows="1"></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="exampleFormControlTextarea1">CPF do Responsável:</label>
+    <textarea class="form-control" id="cpf" name="cpf" rows="1"></textarea>
+  </div>
+
+  
+  <div class="col-md-2 mx-auto">
+    <p><input type="submit" class="btn btn-outline-secondary" value="Salvar Aluno" name="botao"></p>
+  </div>
+<form>
+{% endblock %}

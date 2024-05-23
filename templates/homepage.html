@@ -1,0 +1,43 @@
+{% extends "modelo.html" %}
+{% block title %}Pagina Inicial{% endblock %}
+
+{% block content %}
+<h1>Visitas agendadas</h1>
+<p>Para o próximos 2 dia:</p>
+{% for i in tabela_prazo_vermelho %}
+<div class="alert alert-danger" role="alert">
+  Cliente: {{ i[0] }} | Data da visita: {{ i[2] }} | Obs: {{ i[1] }}<span><button class="invisible"></button></span> <a href="/leads/agendamentos/editarentrevista/{{i[3]}}" type="button" class="btn btn-outline-secondary">Editar</a>
+</div>
+{% endfor %}
+<p>Para os próximos 5 dias:</p>
+{% for i in tabela_prazo_amarelo %}
+<div class="alert alert-warning" role="alert">
+  Cliente: {{ i[0] }} | Data da visita: {{ i[2] }} | Obs: {{ i[1] }}<span><button class="invisible"></button></span> <a href="/leads/agendamentos/editarentrevista/{{i[3]}}" type="button" class="btn btn-outline-secondary">Editar</a>
+</div>
+{% endfor %}
+
+<h1>Todos os agendamentos:</h1>
+{% for i in tabela_modificado %}
+<div class="alert alert-dark" role="alert">
+  Cliente: {{ i[0] }} | Data da visita: {{ i[2] }} | Obs: {{ i[1] }}<span><button class="invisible"></button></span> <a href="/leads/agendamentos/editarentrevista/{{i[3]}}" type="button" class="btn btn-outline-secondary">Editar</a>
+</div>
+{% endfor %}
+
+
+<!--
+<script type='text/javascript'>
+        $(document).ready(function() {
+            // faz uma chamada assíncrona à API
+            $.ajax({
+                url: '/processar-tarefa',
+                type: 'GET',
+                success: function(resposta) {
+                    // atualiza o conteúdo da página com a resposta da API
+                    $('body').html(resposta);
+                }
+            });
+        });
+</script>
+-->
+{% endblock %}
+
