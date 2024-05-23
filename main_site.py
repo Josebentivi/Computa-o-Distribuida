@@ -12,8 +12,8 @@ import requests
 from docxtpl import DocxTemplate as Dc
 import pdfkit
 import subprocess
-from Cliente import Cliente
-import cerebro
+#from Cliente import Cliente
+#import cerebro
 import random
 import operator
 import logging
